@@ -5,7 +5,7 @@ Donate link:
 Tags: comments, spam
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: trunk
+Stable tag: 1.0.4
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -24,6 +24,7 @@ The Snipi Toolbar also allows you to drag and drop products, photos and YouTube 
 Important Links:
 
 * <a href="http://www.snipiblog.com/tutorial-videos/" title="Tutorial videos">Tutorial videos</a>
+* <a href="http://wordpress.org/tags/snipi-for-wordpress-media-library-and-nextgen-gallery" title="Wordpress Support Forum">Support Forum</a>
 
 Features:
 
@@ -38,7 +39,7 @@ Features:
 1. <a href="http://www.snipi.com/wordpress/">Download</a> the plug-in.
 1. Upload the files to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Go to “Overview”, under Snipi and sign in using your Snipi username and password. If you do not yet have a Snipi account or have not yet downloaded the Snipi Toolbar for Firefox 3 (or higher), go to www.snipi.com, register, and install the Toolbar for Firefox.
+1. Go to "Overview", under Snipi and sign in using your Snipi username and password. If you do not yet have a Snipi account or have not yet downloaded the Snipi Toolbar for Firefox 3 (or higher), go to www.snipi.com, register, and install the Toolbar for Firefox.
 1. Set the Snipi WordPress plugin to either WordPress or NGG mode (depending on whether you use the WordPress Media Library or NextGen Gallery).
 1. Open up your Snipi Toolbar in Firefox by clicking the Snipi logo in the lower right hand corner of your Firefox window. Sign in.
 1. Create a new list in the Snipi Toolbar, select "Send these photos to Wordpress".  If you have not yet signed into Snipi in Wordpress (step 3 above) then you will not be able to check this box.
