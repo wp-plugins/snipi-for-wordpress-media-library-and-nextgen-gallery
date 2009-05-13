@@ -24,6 +24,7 @@ The Snipi Toolbar also allows you to drag and drop products, photos and YouTube 
 Important Links:
 
 * <a href="http://www.snipiblog.com/tutorial-videos/" title="Tutorial videos">Tutorial videos</a>
+* <a href="http://wordpress.org/tags/snipi-for-wordpress-media-library-and-nextgen-gallery" title="Wordpress Support Forum">Support Forum</a>
 
 Features:
 
