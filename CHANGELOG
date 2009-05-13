@@ -1,0 +1,19 @@
+version 1.0.3(April 26, 2009)
+	[*] updated descriptions and installation instructions.
+	[+] use Services_JSON class when json library is not available
+
+version 1.0.2(March 2, 2009)
+	[*] fixed bug. Unexpected JSON message on the page.
+	[*] Image upload return success(0|1)
+
+version 1.0.1(February 27, 2009)
+	[*] Modified urls for AJAX requests.
+	[*] Modified menu and pages.
+	[*] Manage and setting pages were moved to overview page.
+	[*] fixed. User couldn't switch to WordPress mode after NextGEN plugin was deactivated.
+		Now plugin switch it automatically and shows warning message.
+
+version 1.0.0(February 10, 2009)
+	- this changelog were added.
+
+vim: set expandtab:

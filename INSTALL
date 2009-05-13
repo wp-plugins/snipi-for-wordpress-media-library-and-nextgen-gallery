@@ -1,0 +1,23 @@
+wp_snipi Installation instructions
+---------------------------------------
+
+	1. Download the plug-in from http://www.snipi.com/wordpress
+	2. Upload the files to wp-content/plugins/</p>";
+	3. Go to “Overview”, under Snipi and sign in using your Snipi username and password. If you do not yet have a Snipi account or have not yet downloaded the Snipi Toolbar for Firefox 3 (or higher), go to www.snipi.com, register, and install the Toolbar for Firefox.</p>";
+	4.  Set the Snipi WordPress plugin to either WordPress or NGG mode (depending on whether you use the WordPress Media Library or NextGen Gallery).</p>";
+	5.  Open up your Snipi Toolbar in Firefox by clicking the Snipi logo in the lower right hand corner of your Firefox window. Sign in. </p>";
+	6. Create a new list in the Snipi Toolbar, select \"Send these photos to Wordpress\".  If you have not yet signed into Snipi in Wordpress (step 3 above) then you will not be able to check this box.</p>";
+	7. Drag and image from anywhere on the Internet into the toolbar.  Click save in the Toolbar.</p>";
+	8. Voila!  In about 60 seconds, that image will appear in either the WordPress Media Library or the NextGen Gallery (depending on which mode you choose/prefer).</p>";
+	
+wp_snipi features configuration
+-----------------
+Modify configuration variables in  /wp_snipi/core.php
+
+Make sure that the following constants set properly:
+
+SNIPI_AJAX_URL - Url that checks snipi user profile (For example, http://www.snipi.com/wordpress/api/)
+SNIPI_ALLOWED_IMAGE_EXT - Allowed Image extentions. Use pipe  as separator (For example, jpeg|jpg|gif|png);
+SNIPI_GALLERY_TITLE - Title of the gallery where plugin put images from Snipi (for NextGen Gallery mode only)
+
+vim: set expandtab :
