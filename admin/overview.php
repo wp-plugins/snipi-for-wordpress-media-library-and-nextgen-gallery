@@ -202,14 +202,14 @@ echo '<p>';
     switch($snipi->options['mode']){
         case 'ngg':
             echo 'Snipi for WordPress is currently in NextGen mode<br/>';
-            echo ' Switch to <a href="'.str_replace('%7E','~',$_SERVER['PHP_SELF']).'?page=wp_snipi&mode=wp'.'">WordPress Mode</a>';
+            echo ' Switch to <a href="'.str_replace('%7E','~',$_SERVER['PHP_SELF']).'?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=wp'.'">WordPress Mode</a>';
             break;
         case 'wp':
 
         default:
             echo 'Snipi for WordPress is currently in WordPress mode<br/>';
             if (class_exists('nggLoader')){
-                echo ' Switch to <a href="'.str_replace('%7E','~',$_SERVER['PHP_SELF']).'?page=wp_snipi&mode=ngg'.'">NextGen Mode</a>';
+                echo ' Switch to <a href="'.str_replace('%7E','~',$_SERVER['PHP_SELF']).'?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=ngg'.'">NextGen Mode</a>';
             }
             break;
     }
