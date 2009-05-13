@@ -38,7 +38,7 @@ Features:
 1. <a href="http://www.snipi.com/wordpress/">Download</a> the plug-in.
 1. Upload the files to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Go to “Overview”, under Snipi and sign in using your Snipi username and password. If you do not yet have a Snipi account or have not yet downloaded the Snipi Toolbar for Firefox 3 (or higher), go to www.snipi.com, register, and install the Toolbar for Firefox.
+1. Go to "Overview", under Snipi and sign in using your Snipi username and password. If you do not yet have a Snipi account or have not yet downloaded the Snipi Toolbar for Firefox 3 (or higher), go to www.snipi.com, register, and install the Toolbar for Firefox.
 1. Set the Snipi WordPress plugin to either WordPress or NGG mode (depending on whether you use the WordPress Media Library or NextGen Gallery).
 1. Open up your Snipi Toolbar in Firefox by clicking the Snipi logo in the lower right hand corner of your Firefox window. Sign in.
 1. Create a new list in the Snipi Toolbar, select "Send these photos to Wordpress".  If you have not yet signed into Snipi in Wordpress (step 3 above) then you will not be able to check this box.
