@@ -12,11 +12,19 @@ Drag and drop images into the Snipi Toolbar and they automatically appear in you
 == Description ==
 
 Using the Snipi Toolbar, you can drag and drop images from anywhere on the Internet and have them appear automatically in your WordPress Media Library or NextGen Gallery.
+
 You can get the Snipi Toolbar at www.snipi.com.
+
 The Snipi Toolbar is a Firefox 3 (or higher) add-on that allows you to literally drag and drop products, photos and YouTube and Vimeo videos from anywhere on the web.  The current version of the Snipi WordPress Plugin gives you the option of having an entire list of images or a single image at a time sent to WordPress' Media Library or NextGen Gallery.  Within seconds after dragging an image into the Snipi Toolbar, the image will automatically appear in WordPress, ready for you to use in your posts.
+
 The Snipi WordPress Plugin has two modes, WordPress mode or NGG mode.  If you are an NextGen Gallery user, you can choose NGG mode to have images sent to NextGen Gallery rather than the WordPress Media Libary.
+
 The Snipi Toolbar also allows you to drag and drop products, photos and YouTube and Vimeo videos from anywhere on the web. These items are always available with you in the Snipi Toolbar, are saved on Snipi.com, can be sent to Facebook or WordPress, can be sent to Twitter (Tweeted) on the fly, and are available on your iPhone using the Snipi app.
-Watch the tutorial videos at http://www.snipiblog.com/tutorial-videos/
+
+Important Links:
+
+* <a href="http://www.snipiblog.com/tutorial-videos/" title="Tutorial videos">Tutorial videos</a>
+
 Features:
 
 * Drag and drop images from anywhere on the Internet into the Snipi Toolbar and have them automatically sent to WordPress.
@@ -27,7 +35,7 @@ Features:
 
 == Installation ==
 
-1. Download the plug-in.
+1. <a href="http://www.snipi.com/wordpress/">Download</a> the plug-in.
 1. Upload the files to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Go to “Overview”, under Snipi and sign in using your Snipi username and password. If you do not yet have a Snipi account or have not yet downloaded the Snipi Toolbar for Firefox 3 (or higher), go to www.snipi.com, register, and install the Toolbar for Firefox.
