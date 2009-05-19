@@ -225,12 +225,16 @@ class snipiLoader{
  * @return string Hash string
  */
 function wp_snipi_get_api(){
+    global $wpdb;
     $current_user=wp_get_current_user();
     $user_id=$current_user->ID;
     $user_pwd=$current_user->user_pass;
     $user_login=$current_user->user_login;
     $url=wp_snipi_get_url();
-    return md5($user_id.'_'.$user_login.'_'.$user_pwd.'_'.AUTH_KEY.$url);
+
+    $sql="SELECT MD5(CONCAT('$user_id','_','$user_login','_','$user_pwd','_".str_replace("'",'',AUTH_KEY).$url."')) as api";
+    $result=$wpdb->get_results($sql);
+    return $result[0]->api;
 }
 
 /**
@@ -319,7 +323,7 @@ function wp_snipi_update_user($un,$pwd,$api,$url){
 function wp_snipi_get_user($api){
     global $wpdb;
     $url=wp_snipi_get_url();
-    $sql="SELECT * FROM $wpdb->users WHERE MD5(CONCAT(ID,'_',user_login,'_',user_pass,'_".AUTH_KEY.$url."'))='$api' LIMIT 1";
+    $sql="SELECT * FROM $wpdb->users WHERE MD5(CONCAT(ID,'_',user_login,'_',user_pass,'_".str_replace("'",'',AUTH_KEY).$url."'))='$api' LIMIT 1";
     $result=$wpdb->get_results($sql);
     return (is_array($result)&&count($result))?$result[0]:array();
 }
