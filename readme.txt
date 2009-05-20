@@ -5,7 +5,7 @@ Donate link:
 Tags: comments, spam
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.0.4
+Stable tag: 1.0.6
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -36,7 +36,7 @@ Features:
 
 == Installation ==
 
-1. <a href="http://www.snipi.com/wordpress/">Download</a> the plug-in.
+1. Download the plug-in.
 1. Upload the files to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Go to "Overview", under Snipi and sign in using your Snipi username and password. If you do not yet have a Snipi account or have not yet downloaded the Snipi Toolbar for Firefox 3 (or higher), go to www.snipi.com, register, and install the Toolbar for Firefox.
