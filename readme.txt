@@ -1,8 +1,7 @@
 === Snipi for Wordpress ===
 Contributors: Snipi, Denis Uraganov
-Tags: snipi, upload, NextGen
+Tags: photo, image, picture, pics, images, post, media library, wordpress, gallery, photos, drag and drop, upload, send, nextgen, facebook, twitter, youtube, vimeo, firefox, add on, iphone, plugin
 Donate link:
-Tags: comments, spam
 Requires at least: 2.7
 Tested up to: 2.7.1
 Stable tag: 1.0.6
