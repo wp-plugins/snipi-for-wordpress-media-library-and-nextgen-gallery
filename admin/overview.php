@@ -12,7 +12,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 
 add_meta_box('dashboard_right_now', __('Status', 'snipi'), 'wp_snipi_overview_right_now', 'snipi_overview', 'left', 'core');
 add_meta_box('dashboard_quick_press', __('Plugin mode', 'snipi'), 'wp_snipi_settings', 'snipi_overview', 'right', 'core');
-add_meta_box('dashboard_primary', __('Latest News', 'snipi'), 'wp_snipi_overview_news', 'snipi_overview', 'left', 'core');
+//add_meta_box('dashboard_primary', __('Latest News', 'snipi'), 'wp_snipi_overview_news', 'snipi_overview', 'left', 'core');
 
 /**
  *
@@ -97,7 +97,7 @@ function wp_snipi_overview_news(){
       {
           //@todo change domain for url
         ?>
-        <p><?php printf(__('Newsfeed could not be loaded.  Check the <a href="%s">front page</a> to check for updates.', 'nggallery'), 'http://www.snipi.com/wordpress') ?></p>
+        <p><?php printf(__('Newsfeed could not be loaded.  Check the <a href="%s">front page</a> to check for updates.', 'nggallery'), 'http://snipi.com/tour/view/social/') ?></p>
         <?php
       }
     ?>
