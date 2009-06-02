@@ -38,5 +38,19 @@ function wp_snipi_about() {
 	echo "<p>6. Create a new list in the Snipi Toolbar, select \"Send these photos to Wordpress\".  If you have not yet signed into Snipi in Wordpress (step 3 above) then you will not be able to check this box.</p>";
 	echo "<p>7. Drag and image from anywhere on the Internet into the toolbar.  Click save in the Toolbar.</p>";
 	echo "<p>8. Voila!  In about 60 seconds, that image will appear in either the WordPress Media Library or the NextGen Gallery (depending on which mode you choose/prefer).</p>";
+	
+	
+    echo "<h2>Frequently Asked Questions</h2>";
+    echo "<p>==I have some issue with Snipi for WordPress Plugin. What should I do?==</p>";
+    echo "<p>Our team works hard to test our plugin with different configurations.</p>";
+    echo "<p>However it's physically impossible to test our plugin with all possible configurations.</p>";
+    echo "<p>We will appreciate your effort to share with us any problem that you have with Snipi for Wordpress Plugin.</p>";
+    echo "<p>Please send description of your problem to support@snipi.com</p>";
+    echo "<p>Also include the following information that will help us to solve your issue:</p>";
+    echo "<ul>";
+    echo "<li>WordPress version</li>";
+    echo "<li>Snipi for WordPress version</li>";
+    echo "<li>NextGen Gallery version (if you use one)</li>";
+    echo "</ul>";
 }
 ?>
