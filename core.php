@@ -4,7 +4,7 @@
  *
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.0.7
+ * @version 1.0.8
  * @since 1.0.0
  */
 
@@ -270,7 +270,7 @@ function wp_snipi_is_active($api){
         else{
         	require_once (dirname(__FILE__).'/lib/json.php');
         	$json = new Services_JSON();
-			$obj = $json->encode($buffer);
+			$obj = $json->decode($buffer);
         }
         if ($obj->success=='true'&&$obj->wp_url==wp_snipi_get_url()){
             return true;
@@ -291,7 +291,6 @@ function wp_snipi_is_active($api){
 function wp_snipi_update_user($un,$pwd,$api,$url){
     // set URL and other appropriate options
     $servis_url=SNIPI_AJAX_URL.'?service=updatewpapi&username='.urlencode($un).'&password='.urlencode($pwd).'&url='.urlencode($url).'&api='.urlencode($api);
-    //echo $servis_url;
     // create a new cURL resource
     $ch=curl_init();
     curl_setopt($ch,CURLOPT_URL,$servis_url);
@@ -306,7 +305,7 @@ function wp_snipi_update_user($un,$pwd,$api,$url){
         else{
         	require_once (dirname(__FILE__).'/lib/json.php');
         	$json = new Services_JSON();
-			$obj = $json->encode($buffer);
+			$obj = $json->decode($buffer);
         }
         if ($obj->success=='true'){
             return true;

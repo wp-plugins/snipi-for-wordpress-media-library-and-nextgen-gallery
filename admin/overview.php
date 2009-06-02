@@ -46,7 +46,7 @@ function wp_snipi_overview_right_now() {
 		$api=wp_snipi_get_api();
 		$url=wp_snipi_get_url();
 
-    	if(isset($_POST['snipi_hidden'])&&$_POST['snipi_hidden'] == 'Y') {
+    if(isset($_POST['snipi_hidden'])&&$_POST['snipi_hidden'] == 'Y') {
     	    $un=(isset($_POST['snipi_user']))?trim(strip_tags($_POST['snipi_user'])):'';
     	    $pwd=(isset($_POST['snipi_password']))?trim(strip_tags($_POST['snipi_password'])):'';
     	    $errors=array();
@@ -54,7 +54,7 @@ function wp_snipi_overview_right_now() {
 	            print_user_info();
     	    }
     	    else{
-    	        print_user_login($errors,$un);
+    	        print_user_login(array('Incorrect username or password'),$un);
     	    }
 	} else {
 	if (wp_snipi_is_active($api)){
@@ -136,22 +136,27 @@ function print_user_login($errors=array(),$un=''){
     <div class="wrap">
     <h2>Activate plugin</h2>
     <p>
-    After you have registered for Snipi and downloaded the Snipi Toolbar, enter your Snipi username and password here.  For more information on how to use the toolbar, read the <a href="admin.php?page=snipi-about">About section</a> of the Snipi for Wordpress plugin
+    For more information on how to use the toolbar with Snipi for Wordpress Plugin, read the <a href="admin.php?page=snipi-about">About section</a> of the Snipi for Wordpress plugin
     </p>
 
+    <p>
+    Please enter your Snipi username and password. If you do not yet have an account, <a href="http://www.snipi.com/registration" target="_blank">Sign Up here</a>.
+    </p>
     <?php
-    if (count($errors)){
-        echo "<ul>";
-        foreach ($errors as $error) {
-        	echo '<li>'.$error.'<li>';
-        }
-        echo "</ul>";
-    }
-    ?>
+    if (count($errors)):?>
+        <div id="login_error">
+        <?php   foreach ($errors as $error) {
+        echo '<strong>ERROR</strong> : '.$error.'<br/>';
+        ?>
+		</div>
+    <?php }?>
+    <?php endif;?>
+    
 <form name="oscimp_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
 	<p><?php _e("Snipi Username: " ); ?><input type="text" name="snipi_user" value="<?php echo $un; ?>" size="20"></p>
 	<p><?php _e("Snipi Password: " ); ?><input type="password" name="snipi_password" value="" size="20"></p>
 	<input type="hidden" name="snipi_hidden" value="Y">
+	<a href="http://www.snipi.com/login/reset">Lost your password?</a>
 	<p class="submit">
 	<input type="submit" name="Submit" value="<?php _e('Update Options', 'snipi_trdom' ) ?>" />
 	</p>
