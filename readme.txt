@@ -4,7 +4,7 @@ Tags: photo, image, picture, pics, images, post, media library, wordpress, galle
 Donate link:
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -56,8 +56,16 @@ Make sure that the following constants set properly:
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= I have some issue with Snipi for WordPress Plugin. What should I do? =
 
-An answer to that question.
+Our team works hard to test our plugin with different configurations. 
+However it's physically impossible to test our plugin with all possible configurations.
+
+We will appreciate your effort to share with us any problem that you have with Snipi for Wordpress Plugin.
+Please send description of your problem to support@snipi.com
+Also include the following information that will help us to solve your issue:
+- WordPress version
+- Snipi for WordPress version
+- NextGen Gallery version (if you use one)   
 
 == Screenshots ==
