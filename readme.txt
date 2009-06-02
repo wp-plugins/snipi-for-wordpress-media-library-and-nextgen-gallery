@@ -35,6 +35,12 @@ Features:
 
 == Installation ==
 
+Requirements:
+
+* PHP5
+
+Steps:
+
 1. Download the plug-in.
 1. Upload the files to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
@@ -64,8 +70,9 @@ However it's physically impossible to test our plugin with all possible configur
 We will appreciate your effort to share with us any problem that you have with Snipi for Wordpress Plugin.
 Please send description of your problem to support@snipi.com
 Also include the following information that will help us to solve your issue:
-- WordPress version
-- Snipi for WordPress version
-- NextGen Gallery version (if you use one)   
+
+* WordPress version
+* Snipi for WordPress version
+* NextGen Gallery version (if you use one)   
 
 == Screenshots ==
