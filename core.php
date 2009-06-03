@@ -4,7 +4,7 @@
  *
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.0.8
+ * @version 1.1.0
  * @since 1.0.0
  */
 
