@@ -73,16 +73,11 @@ Make sure that the following constants set properly:
 
 = I have some issue with Snipi for WordPress Plugin. What should I do? =
 
-Our team works hard to test our plugin with different configurations. 
-However it's physically impossible to test our plugin with all possible configurations.
+If you are having any problems with the Snipi for WordPress plugin, please do not hesitate to email our support team. 
 
-We will appreciate your effort to share with us any problem that you have with Snipi for Wordpress Plugin.
-Please send description of your problem to support@snipi.com
-Also include the following information that will help us to solve your issue:
+Our team works hard to test the Snipi for WordPress plugin with different configurations. However, it's impossible to test our plugin with every possible configuration.
 
-* WordPress version
-* Snipi for WordPress version
-* NextGen Gallery version (if you use one)   
+Therefore, we appreciate the effort you put forth to share any problem that you have with Snipi for Wordpress Plugin. Please send the description of your problem to support@snipi.com Also, please include the following information that will help us to solve your issue:  WordPress version, Snipi for WordPress version, and , if applicable, the NextGen Gallery version you are using. 
 
 == Screenshots ==
 
