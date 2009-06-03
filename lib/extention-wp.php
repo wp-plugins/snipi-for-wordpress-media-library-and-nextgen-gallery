@@ -126,7 +126,6 @@ function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
     //copy file from url to file
     $src=fopen($img_url,"r");
     $dest=fopen($new_file,"w");
-    echo 'Hello';
     if (function_exists('stream_copy_to_stream')){
         if (false=== stream_copy_to_stream($src,$dest)){
             return $upload_error_handler($img_url,sprintf(__('The file from %s could not be moved to %s.'),$src,$uploads['path']));
