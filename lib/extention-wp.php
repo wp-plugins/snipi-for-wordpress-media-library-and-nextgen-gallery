@@ -3,7 +3,7 @@
  * This file contains functions and includes files required for url image upload using WordPress Gallery
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.0.3
+ * @version 1.1.0
  * @since 1.0.0
  */
 global $wpdb,$user_ID,$img;
@@ -126,14 +126,13 @@ function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
     //copy file from url to file
     $src=fopen($img_url,"r");
     $dest=fopen($new_file,"w");
-    if (function_exists('stream_copy_to_stream')){
-        if (false=== stream_copy_to_stream($src,$dest)){
-            return $upload_error_handler($img_url,sprintf(__('The file from %s could not be moved to %s.'),$src,$uploads['path']));
+    if (function_exists('stream_copy_to_stream')) {
+        if (false === stream_copy_to_stream($src, $dest)) {
+            return $upload_error_handler($img_url, sprintf(__('The file from %s could not be moved to %s.'), $src, $uploads['path']));
         }
-    }
-    else{
-        while (!feof($src)) {
-                     fwrite($dest, fread($src, 4096));
+    } else {
+        while (! feof($src)) {
+            fwrite($dest, fread($src, 4096));
         }
     }
     fclose($src);
