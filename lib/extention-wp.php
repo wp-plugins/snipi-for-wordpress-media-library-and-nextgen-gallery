@@ -23,19 +23,27 @@ if (!count($user)){
 $user_ID=$user->ID;
 //validate external image
 $img=wp_snipi_get_image($img_url);
+
 if (!$img){
     $res['errors'][]='Error, Image does not exist: '.$img_url;
 }
 
-if (!(isset($res['errors'])&&count($res['errors']))){
-    $id=media_handle_upload($img_url,0);
-    if (is_wp_error($id)){
-        $errors['upload_error']=$id;
-    }else{
-        $res['success']=true;
+if (! (isset($res['errors']) && count($res['errors']))) {
+    $id = media_handle_upload($img_url, 0);
+    if (is_wp_error($id)) {
+        $errors['upload_error'] = $id;
+    } else {
+        $res['success'] = true;
     }
 }
-echo json_encode($res);
+if (function_exists('json_encode'))
+    echo json_encode($res);
+else {
+    require_once (dirname(dirname(__FILE__) ). '/lib/json.php');
+    $json = new Services_JSON();
+    echo $json->encode($res);
+}
+
 
 /**
  * Function handles image upload from url. Verifies and Uploads image file from url, creates thumbnails and post
@@ -53,7 +61,7 @@ function media_handle_upload($media_url,$post_id,$post_data=array()){
     $time=current_time('mysql');
 
     $file=wp_snipi_handle_upload($media_url,$overrides,$time);
-
+    
     if (isset($file['error'])) return new WP_Error('upload_error',$file['error']);
 
     $url=$file['url'];
@@ -118,8 +126,16 @@ function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
     //copy file from url to file
     $src=fopen($img_url,"r");
     $dest=fopen($new_file,"w");
-    if (false===@ stream_copy_to_stream($src,$dest)){
-        return $upload_error_handler($img_url,sprintf(__('The file from %s could not be moved to %s.'),$src,$uploads['path']));
+    echo 'Hello';
+    if (function_exists('stream_copy_to_stream')){
+        if (false=== stream_copy_to_stream($src,$dest)){
+            return $upload_error_handler($img_url,sprintf(__('The file from %s could not be moved to %s.'),$src,$uploads['path']));
+        }
+    }
+    else{
+        while (!feof($src)) {
+                     fwrite($dest, fread($src, 4096));
+        }
     }
     fclose($src);
     fclose($dest);
