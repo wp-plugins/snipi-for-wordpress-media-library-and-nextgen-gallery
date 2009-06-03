@@ -4,7 +4,7 @@ Tags: photo, image, picture, pics, images, post, media library, wordpress, galle
 Donate link:
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.0.6
+Stable tag: 1.1.0
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -25,7 +25,19 @@ Important Links:
 * <a href="http://www.snipiblog.com/tutorial-videos/" title="Tutorial videos">Tutorial videos</a>
 * <a href="http://wordpress.org/tags/snipi-for-wordpress-media-library-and-nextgen-gallery" title="Wordpress Support Forum">Support Forum</a>
 
-Features:
+RELEASE INFORMATION
+---------------
+Snipi for Wordpress 1.1.0.
+Released on June 03, 2009.
+
+CHANGELOG: 1.1.0
+----------------
+
+* Support PHP 4
+* Improved activation/deactivation processes on Snipi.com 
+* Cosmetic changes for user interface  
+
+FEATURES:
 
 * Drag and drop images from anywhere on the Internet into the Snipi Toolbar and have them automatically sent to WordPress.
 * WordPress Media Library Mode or NextGen Gallery Mode.
@@ -34,6 +46,8 @@ Features:
 * Use the Snipi iPhone app to view all of your products, photos and videos - on the go.
 
 == Installation ==
+
+Steps:
 
 1. Download the plug-in.
 1. Upload the files to the `/wp-content/plugins/` directory
@@ -56,8 +70,25 @@ Make sure that the following constants set properly:
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= I have some issue with Snipi for WordPress Plugin. What should I do? =
 
-An answer to that question.
+Our team works hard to test our plugin with different configurations. 
+However it's physically impossible to test our plugin with all possible configurations.
+
+We will appreciate your effort to share with us any problem that you have with Snipi for Wordpress Plugin.
+Please send description of your problem to support@snipi.com
+Also include the following information that will help us to solve your issue:
+
+* WordPress version
+* Snipi for WordPress version
+* NextGen Gallery version (if you use one)   
 
 == Screenshots ==
+
+== ChangeLog ==
+
+Release: 1.1.0:
+
+* Support PHP 4
+* Improved activation/deactivation processes on Snipi.com 
+* Cosmetic changes for user interface  

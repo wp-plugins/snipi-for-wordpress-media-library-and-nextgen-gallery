@@ -4,7 +4,7 @@
  *
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.0.7
+ * @version 1.1.0
  * @since 1.0.0
  */
 
@@ -220,6 +220,11 @@ class snipiLoader{
 }
 
 /**
+ * Username on Snipi.com
+ */
+$snipi_username='';
+
+/**
  * Generate api for current user
  *
  * @return string Hash string
@@ -254,6 +259,7 @@ function wp_snipi_get_url(){
  * @return boolean
  */
 function wp_snipi_is_active($api){
+    global $snipi_username;
     // create a new cURL resource
     $ch=curl_init();
     // set URL and other appropriate options
@@ -270,9 +276,10 @@ function wp_snipi_is_active($api){
         else{
         	require_once (dirname(__FILE__).'/lib/json.php');
         	$json = new Services_JSON();
-			$obj = $json->encode($buffer);
+			$obj = $json->decode($buffer);
         }
         if ($obj->success=='true'&&$obj->wp_url==wp_snipi_get_url()){
+            $snipi_username=$obj->username;
             return true;
         }
     }
@@ -289,9 +296,9 @@ function wp_snipi_is_active($api){
  * @return boolean
  */
 function wp_snipi_update_user($un,$pwd,$api,$url){
+    global $snipi_username;
     // set URL and other appropriate options
     $servis_url=SNIPI_AJAX_URL.'?service=updatewpapi&username='.urlencode($un).'&password='.urlencode($pwd).'&url='.urlencode($url).'&api='.urlencode($api);
-    //echo $servis_url;
     // create a new cURL resource
     $ch=curl_init();
     curl_setopt($ch,CURLOPT_URL,$servis_url);
@@ -306,7 +313,41 @@ function wp_snipi_update_user($un,$pwd,$api,$url){
         else{
         	require_once (dirname(__FILE__).'/lib/json.php');
         	$json = new Services_JSON();
-			$obj = $json->encode($buffer);
+			$obj = $json->decode($buffer);
+        }
+        if ($obj->success=='true'){
+            $snipi_username=$obj->username;
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Remove any reference to this plugin activation on Snipi.com
+ *
+ * @param string $api
+ * @param string $url
+ * @return unknown
+ */
+function wp_snipi_remove_user($api,$url){
+    // set URL and other appropriate options
+    $servis_url=SNIPI_AJAX_URL.'?service=removeapi&url='.urlencode($url).'&api='.urlencode($api);
+    // create a new cURL resource
+    $ch=curl_init();
+    curl_setopt($ch,CURLOPT_URL,$servis_url);
+    curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    $buffer=curl_exec($ch);
+    // close cURL resource, and free up system resources
+    curl_close($ch);
+    if (!empty($buffer)){
+        if (function_exists('json_decode'))
+        	$obj=json_decode($buffer);
+        else{
+        	require_once (dirname(__FILE__).'/lib/json.php');
+        	$json = new Services_JSON();
+			$obj = $json->decode($buffer);
         }
         if ($obj->success=='true'){
             return true;
@@ -314,6 +355,7 @@ function wp_snipi_update_user($un,$pwd,$api,$url){
     }
     return false;
 }
+
 
 /**
  * Get information about user who has particular api
