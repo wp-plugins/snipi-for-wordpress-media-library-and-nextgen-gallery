@@ -22,7 +22,8 @@ The Snipi Toolbar also allows you to drag and drop products, photos and YouTube 
 
 Important Links:
 
-* <a href="http://www.snipiblog.com/tutorial-videos/" title="Tutorial videos">Tutorial videos</a>
+* <a href="http://www.snipiblog.com/tutorial-videos/" title="Tutorial videos">Snipi Overview Videos</a>
+* <a href="http://www.youtube.com/watch?v=73iNmJ1k-2c" title="Wordpress Support Forum">Snipi For WordPress Video</a>
 * <a href="http://wordpress.org/tags/snipi-for-wordpress-media-library-and-nextgen-gallery" title="Wordpress Support Forum">Support Forum</a>
 
 RELEASE INFORMATION
@@ -84,6 +85,8 @@ Also include the following information that will help us to solve your issue:
 * NextGen Gallery version (if you use one)   
 
 == Screenshots ==
+
+<a href="http://www.youtube.com/watch?v=73iNmJ1k-2c" title="Wordpress Support Forum">Snipi For WordPress Video</a>
 
 == ChangeLog ==
 
