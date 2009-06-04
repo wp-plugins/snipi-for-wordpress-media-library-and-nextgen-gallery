@@ -3,7 +3,7 @@
  * This file contains functions and includes files required for url image upload using WordPress Gallery
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.1.0
+ * @version 1.1.1
  * @since 1.0.0
  */
 global $wpdb,$user_ID,$img;
@@ -21,17 +21,13 @@ if (!count($user)){
     $res['errors'][]='Error, API is not valid: '.$api;
 }
 $user_ID=$user->ID;
-//validate external image
-$img=wp_snipi_get_image($img_url);
-
-if (!$img){
-    $res['errors'][]='Error, Image does not exist: '.$img_url;
-}
 
 if (! (isset($res['errors']) && count($res['errors']))) {
     $id = media_handle_upload($img_url, 0);
     if (is_wp_error($id)) {
-        $errors['upload_error'] = $id;
+        foreach ($id->errors['upload_error'] as $error) {
+            $res['errors'][]=$error;
+        }
     } else {
         $res['success'] = true;
     }
@@ -95,9 +91,9 @@ function media_handle_upload($media_url,$post_id,$post_data=array()){
  * @return array On success, returns an associative array of file attributes. On failure, returns $overrides['upload_error_handler'](&$file, $message ) or array( 'error'=>$message ).
  */
 function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
+    global $img;
     // The default error handler.
     if (!function_exists('wp_handle_upload_error')){
-
         function wp_handle_upload_error(&$img_url,$message){
             return array('error'=>$message);
         }
@@ -114,6 +110,11 @@ function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
 
     // A writable uploads dir will pass this test. Again, there's no point overriding this one.
     if (!(($uploads=wp_upload_dir($time))&&false===$uploads['error'])) return $upload_error_handler($img_url,$uploads['error']);
+    
+    //allow upload files only from snipi.com and only files with specified extentions
+    if (!isAllowedUrl($img_url)){
+        return $upload_error_handler($img_url, sprintf(__('The file from %s could not be uploaded. _1'), $img_url));
+    }
 
     $filepart=pathinfo(strtolower($img_url));
     $filepart['filename']=substr($filepart["basename"],0,strlen($filepart["basename"])-(strlen($filepart["extension"])+1));
@@ -123,26 +124,25 @@ function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
     // Move the file to the uploads dir
     $new_file=$uploads['path']."/$filename";
 
-    //copy file from url to file
-    $src=fopen($img_url,"r");
-    $dest=fopen($new_file,"w");
-    if (function_exists('stream_copy_to_stream')) {
-        if (false === stream_copy_to_stream($src, $dest)) {
-            return $upload_error_handler($img_url, sprintf(__('The file from %s could not be moved to %s.'), $src, $uploads['path']));
-        }
-    } else {
-        while (! feof($src)) {
-            fwrite($dest, fread($src, 4096));
-        }
+    //get file from snipi.com
+    if (!LoadImageCURL($img_url,$new_file)){
+        return $upload_error_handler($img_url, sprintf(__('The file from %s could not be uploaded. _2.'), $img_url));
     }
-    fclose($src);
-    fclose($dest);
-
+    
+    //get metadata for uploaded file
+    $img=@getimagesize($new_file);
+    
+    //verify that uploaded file has allowed mime type
+     if (!($img&&preg_match('/^image\/('.SNIPI_ALLOWED_IMAGE_EXT.')$/',$img['mime']))){
+        unlink($new_file);
+        unset($img);
+        return $upload_error_handler($img_url, sprintf(__('The file from %s could not be uploaded. _3'), $img_url));
+    }
+    
     // Set correct file permissions
     $stat=stat(dirname($new_file));
     $perms=$stat['mode']&0000666;
-    @ chmod($new_file,$perms);
-
+    @chmod($new_file,$perms);
     // Compute the URL
     $url=$uploads['url']."/$filename";
     $return=apply_filters('wp_handle_upload',array('file'=>$new_file,'url'=>$url));

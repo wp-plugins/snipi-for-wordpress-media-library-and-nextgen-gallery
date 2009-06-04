@@ -3,7 +3,7 @@
  * This file contains functions and includes files required for url image upload using NEXTGEN Gallery Plugin
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.1.0
+ * @version 1.1.1
  * @since 1.0.0
  *
  * @param api User Api(required)
@@ -31,11 +31,13 @@ $user = wp_snipi_get_user($api);
 if (! count($user)) {
     $res['errors'][] = 'Error, API is not valid: ' . $api;
 }
+
+
 //validate external image
-$img = wp_snipi_get_image($img_url);
-if (! $img) {
-    $res['errors'][] = 'Error, Image does not exist: ' . $img_url;
+if (!isAllowedUrl($img_url)){
+    $res['errors'][] = "The file from $img_url could not be uploaded.";
 }
+
 // WPMU action
 if (nggAdmin::check_quota()) {
     $res['errors'][] = 'No space';
@@ -96,30 +98,34 @@ if (! (isset($res['errors']) && count($res['errors']))) {
         }
         exit();
     }
-    $src = fopen($img_url, "r");
-    $dest = fopen($dest_file, "w");
-    if (function_exists('stream_copy_to_stream')) {
-        if (stream_copy_to_stream($src, $dest)) {
-            fclose($src);
-            fclose($dest);
-        } else {
-            $res['errors'][] = 'Error, the file could not be moved to : ' . $dest_file;
-            if (function_exists('json_encode'))
-                echo json_encode($res);
-            else {
-                require_once (dirname(dirname(__FILE__)) . '/lib/json.php');
-                $json = new Services_JSON();
-                echo $json->encode($res);
-            }
-            exit();
+        //get file from snipi.com
+    if (! LoadImageCURL($img_url, $dest_file)) {
+        $res['errors'][] = 'Error, the file could not be moved to : ' . $dest_file;
+        if (function_exists('json_encode'))
+            echo json_encode($res);
+        else {
+            require_once (dirname(dirname(__FILE__)) . '/lib/json.php');
+            $json = new Services_JSON();
+            echo $json->encode($res);
         }
-    } else {
-        while (! feof($src)) {
-            fwrite($dest, fread($src, 4096));
-        }
-        fclose($src);
-        fclose($dest);
+        exit();
     }
+    //get metadata for uploaded file
+    $img = getimagesize($dest_file);
+    //verify that uploaded file has allowed mime type
+    if (! ($img && preg_match('/^image\/(' . SNIPI_ALLOWED_IMAGE_EXT . ')$/', $img['mime']))) {
+        unlink($dest_file);
+        $res['errors'][] = 'Error, the file could not be moved to : ' . $dest_file;
+        if (function_exists('json_encode'))
+            echo json_encode($res);
+        else {
+            require_once (dirname(dirname(__FILE__)) . '/lib/json.php');
+            $json = new Services_JSON();
+            echo $json->encode($res);
+        }
+        exit();
+    }
+    
     if (! nggAdmin::chmod($dest_file)) {
         $res['errors'][] = 'Error, the file permissions could not be set';
         if (function_exists('json_encode'))
