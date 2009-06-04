@@ -4,7 +4,7 @@
  *
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.1.0
+ * @version 1.1.1
  * @since 1.0.0
  */
 
@@ -216,7 +216,6 @@ class snipiLoader{
         include_once (dirname(__FILE__).'/admin/install.php');
         snipi_uninstall();
     }
-
 }
 
 /**
@@ -356,7 +355,6 @@ function wp_snipi_remove_user($api,$url){
     return false;
 }
 
-
 /**
  * Get information about user who has particular api
  * @param string $api
@@ -393,19 +391,35 @@ function wp_snipi_get_gallery($title,$user_ID){
 }
 
 /**
- * Validates that image is located on the web, has valid image extention and mime type. If iamge valid returns object with extra info
+ * Grab file form remote server
  *
- * @param string $img_url image url
- * @return false|array
+ * @since 1.1.1
+ * @param string $res remote $url
+ * @param string $des local path
+ * @return boolean
  */
-function wp_snipi_get_image($img_url){
-    $url_v=parse_url($img_url);
-    if (strlen($url_v['host'])&&strlen($url_v['scheme'])&&preg_match("/\.(".SNIPI_ALLOWED_IMAGE_EXT.")$/",$url_v['path'])){
-        $img=@getimagesize($img_url);
-        if ($img&&preg_match('/^image\/('.SNIPI_ALLOWED_IMAGE_EXT.')$/',$img['mime'])){
-            return $img;
-        }
-    }
-    return false;
+function LoadImageCURL ($res, $des)
+{
+    $ch = curl_init($res);
+    $fp = fopen($des, "wb");
+    // set URL and other appropriate options
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+    curl_exec($ch);
+    curl_close($ch);
+    fclose($fp);
+    return file_exists($des);
+}
+
+/**
+ * check if image url belongs to Snipi
+ * @since 1.1.1
+ * @param string $img_url
+ * @return boolean
+ */
+function isAllowedUrl($img_url){
+    return preg_match("/^http:\/\/s3\.amazonaws\.com\/snipi\/images\/a\/[\d]+\.(".SNIPI_ALLOWED_IMAGE_EXT.")$/",$img_url);
 }
 ?>
