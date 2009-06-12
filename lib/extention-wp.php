@@ -23,7 +23,7 @@ if (!count($user)){
 $user_ID=$user->ID;
 
 if (! (isset($res['errors']) && count($res['errors']))) {
-    $id = media_handle_upload($img_url, 0);
+    $id = wp_snipi_media_handle_upload($img_url, 0);
     if (is_wp_error($id)) {
         foreach ($id->errors['upload_error'] as $error) {
             $res['errors'][]=$error;
@@ -49,7 +49,7 @@ else {
  * @param array $post_data
  * @return integer Post id
  */
-function media_handle_upload($media_url,$post_id,$post_data=array()){
+function wp_snipi_media_handle_upload($media_url,$post_id,$post_data=array()){
     global $wpdb,$user_ID,$img;
 
     $overrides=array('test_form'=>false);
@@ -57,7 +57,7 @@ function media_handle_upload($media_url,$post_id,$post_data=array()){
     $time=current_time('mysql');
 
     $file=wp_snipi_handle_upload($media_url,$overrides,$time);
-    
+
     if (isset($file['error'])) return new WP_Error('upload_error',$file['error']);
 
     $url=$file['url'];
@@ -110,7 +110,7 @@ function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
 
     // A writable uploads dir will pass this test. Again, there's no point overriding this one.
     if (!(($uploads=wp_upload_dir($time))&&false===$uploads['error'])) return $upload_error_handler($img_url,$uploads['error']);
-    
+
     //allow upload files only from snipi.com and only files with specified extentions
     if (!isAllowedUrl($img_url)){
         return $upload_error_handler($img_url, sprintf(__('The file from %s could not be uploaded. _1'), $img_url));
@@ -128,17 +128,17 @@ function wp_snipi_handle_upload(&$img_url,$overrides=false,$time=null){
     if (!LoadImageCURL($img_url,$new_file)){
         return $upload_error_handler($img_url, sprintf(__('The file from %s could not be uploaded. _2.'), $img_url));
     }
-    
+
     //get metadata for uploaded file
     $img=@getimagesize($new_file);
-    
+
     //verify that uploaded file has allowed mime type
      if (!($img&&preg_match('/^image\/('.SNIPI_ALLOWED_IMAGE_EXT.')$/',$img['mime']))){
         unlink($new_file);
         unset($img);
         return $upload_error_handler($img_url, sprintf(__('The file from %s could not be uploaded. _3'), $img_url));
     }
-    
+
     // Set correct file permissions
     $stat=stat(dirname($new_file));
     $perms=$stat['mode']&0000666;

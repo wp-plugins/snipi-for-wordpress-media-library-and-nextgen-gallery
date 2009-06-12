@@ -4,7 +4,7 @@ Tags: photo, image, picture, pics, images, post, media library, wordpress, galle
 Donate link:
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -28,15 +28,13 @@ Important Links:
 
 RELEASE INFORMATION
 ---------------
-Snipi for Wordpress 1.1.0.
-Released on June 03, 2009.
+Snipi for Wordpress 1.1.2.
+Released on June 12, 2009.
 
-CHANGELOG: 1.1.0
+CHANGELOG: 1.1.2
 ----------------
+* Fixed minor bugs
 
-* Support PHP 4
-* Improved activation/deactivation processes on Snipi.com 
-* Cosmetic changes for user interface  
 
 FEATURES:
 
@@ -73,11 +71,11 @@ Make sure that the following constants set properly:
 
 = I have some issue with Snipi for WordPress Plugin. What should I do? =
 
-If you are having any problems with the Snipi for WordPress plugin, please do not hesitate to email our support team. 
+If you are having any problems with the Snipi for WordPress plugin, please do not hesitate to email our support team.
 
 Our team works hard to test the Snipi for WordPress plugin with different configurations. However, it's impossible to test our plugin with every possible configuration.
 
-Therefore, we appreciate the effort you put forth to share any problem that you have with Snipi for Wordpress Plugin. Please send the description of your problem to support@snipi.com Also, please include the following information that will help us to solve your issue:  WordPress version, Snipi for WordPress version, and , if applicable, the NextGen Gallery version you are using. 
+Therefore, we appreciate the effort you put forth to share any problem that you have with Snipi for Wordpress Plugin. Please send the description of your problem to support@snipi.com Also, please include the following information that will help us to solve your issue:  WordPress version, Snipi for WordPress version, and , if applicable, the NextGen Gallery version you are using.
 
 == Screenshots ==
 
@@ -85,8 +83,15 @@ Therefore, we appreciate the effort you put forth to share any problem that you 
 
 == ChangeLog ==
 
-Release: 1.1.0:
+Release: 1.1.2:
+* Fixed minor bugs
 
+Release: 1.1.1:
+* Resolved issue with PHP Allow URL fopen
+* Improved security
+
+
+Release: 1.1.0:
 * Support PHP 4
-* Improved activation/deactivation processes on Snipi.com 
-* Cosmetic changes for user interface  
+* Improved activation/deactivation processes on Snipi.com
+* Cosmetic changes for user interface
