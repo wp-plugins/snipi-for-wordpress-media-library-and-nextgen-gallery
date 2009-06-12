@@ -405,7 +405,6 @@ function LoadImageCURL ($res, $des)
     // set URL and other appropriate options
     curl_setopt($ch, CURLOPT_FILE, $fp);
     curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);
     curl_exec($ch);
     curl_close($ch);
