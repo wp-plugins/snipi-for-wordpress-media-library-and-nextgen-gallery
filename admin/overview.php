@@ -19,17 +19,17 @@ add_meta_box('dashboard_quick_press', __('Plugin mode', 'snipi'), 'wp_snipi_sett
  */
 function wp_snipi_overview()  {
 ?>
-<div class="wrap ngg-wrap">
+<div class="wrap">
+<div id="poststuff" class="metabox-holder has-right-sidebar">
 <h2><?php _e('Snipi for Wordpress Plugin Overview', 'snipi') ?></h2>
-<div id="dashboard-widgets-wrap" class="ngg-overview">
-<div id="dashboard-widgets" class="metabox-holder">
 <div id="side-info-column" class="inner-sidebar">
-				<?php do_meta_boxes('snipi_overview', 'right', ''); ?>
-			</div>
-<div id="post-body" class="has-sidebar">
-<div id="dashboard-widgets-main-content" class="has-sidebar-content">
-				<?php do_meta_boxes('snipi_overview', 'left', ''); ?>
-				</div>
+<div id="side-sortables" class="meta-box-sortables ui-sortable">
+<?php do_meta_boxes('snipi_overview', 'right', ''); ?>
+</div>
+</div>
+<div id="post-body">
+<div id="post-body-content">
+<?php do_meta_boxes('snipi_overview', 'left', ''); ?>
 </div>
 </div>
 </div>
@@ -201,9 +201,7 @@ function print_user_info(){
  */
 function wp_snipi_settings(){
     global $snipi;
-
     if (isset($_GET['mode'])&&strlen($_GET['mode'])){
-
         //echo $snipi->options['mode'];
         switch($_GET['mode']){
             case 'ngg':
