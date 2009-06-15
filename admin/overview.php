@@ -3,7 +3,7 @@
  * This file contains functions that show content for 'Overview' page
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.0.3
+ * @version 1.1.3
  * @since 1.0.0
  */
 
