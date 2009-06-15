@@ -3,8 +3,8 @@ Contributors: Snipi, Denis Uraganov
 Tags: photo, image, picture, pics, images, post, media library, wordpress, gallery, photos, drag and drop, upload, send, nextgen, facebook, twitter, youtube, vimeo, firefox, add on, iphone, plugin
 Donate link:
 Requires at least: 2.7
-Tested up to: 2.7.1
-Stable tag: 1.1.1
+Tested up to: 2.8
+Stable tag: 1.1.3
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -28,12 +28,12 @@ Important Links:
 
 RELEASE INFORMATION
 ---------------
-Snipi for Wordpress 1.1.2.
-Released on June 12, 2009.
+Snipi for Wordpress 1.1.3.
+Released on June 14, 2009.
 
-CHANGELOG: 1.1.2
+CHANGELOG: 1.1.3
 ----------------
-* Fixed minor bugs
+* Compatibility 2.8
 
 
 FEATURES:
@@ -82,6 +82,9 @@ Therefore, we appreciate the effort you put forth to share any problem that you 
 <a href="http://www.youtube.com/watch?v=73iNmJ1k-2c" title="Wordpress Support Forum">Snipi For WordPress Video</a>
 
 == ChangeLog ==
+
+Release: 1.1.3:
+* Compatibility 2.8 
 
 Release: 1.1.2:
 * Fixed minor bugs
