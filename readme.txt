@@ -4,7 +4,7 @@ Tags: photo, image, picture, pics, images, post, media library, wordpress, galle
 Donate link:
 Requires at least: 2.7
 Tested up to: 2.8
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -28,12 +28,12 @@ Important Links:
 
 RELEASE INFORMATION
 ---------------
-Snipi for Wordpress 1.1.3.
-Released on June 14, 2009.
+Snipi for Wordpress 1.1.4.
+Released on June 17, 2009.
 
-CHANGELOG: 1.1.3
+CHANGELOG: 1.1.4
 ----------------
-* Compatibility 2.8
+* Resolved issue with Overview page
 
 
 FEATURES:
@@ -82,6 +82,9 @@ Therefore, we appreciate the effort you put forth to share any problem that you 
 <a href="http://www.youtube.com/watch?v=73iNmJ1k-2c" title="Wordpress Support Forum">Snipi For WordPress Video</a>
 
 == ChangeLog ==
+
+Release: 1.1.4:
+* Resolved issue with Overview page
 
 Release: 1.1.3:
 * Compatibility 2.8 
