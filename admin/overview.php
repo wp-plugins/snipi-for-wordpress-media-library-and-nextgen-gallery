@@ -28,7 +28,7 @@ function wp_snipi_overview()  {
 </div>
 </div>
 <div id="post-body">
-<div id="post-body-content">
+<div id="post-body-content" style="80%">
 <?php do_meta_boxes('snipi_overview', 'left', ''); ?>
 </div>
 </div>
