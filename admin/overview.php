@@ -20,15 +20,10 @@ add_meta_box('dashboard_quick_press', __('Plugin mode', 'snipi'), 'wp_snipi_sett
 function wp_snipi_overview()  {
 ?>
 <div class="wrap">
-<div id="poststuff" class="metabox-holder has-right-sidebar">
+<div id="poststuff" class="metabox-holder">
 <h2><?php _e('Snipi for Wordpress Plugin Overview', 'snipi') ?></h2>
-<div id="side-info-column" class="inner-sidebar">
-<div id="side-sortables" class="meta-box-sortables ui-sortable">
-<?php do_meta_boxes('snipi_overview', 'right', ''); ?>
-</div>
-</div>
 <div id="post-body">
-<div id="post-body-content" style="80%">
+<div id="post-body-content">
 <?php do_meta_boxes('snipi_overview', 'left', ''); ?>
 </div>
 </div>
@@ -178,30 +173,7 @@ Up here</a>.</p>
  */
 function print_user_info(){
     global $snipi,$snipi_username;
-    echo '<div style="padding:10px">';
-    echo '<h2>Snipi plugin is active in '.(($snipi->options['mode']=='wp')?'WordPress Mode':'NextGen Mode').'.</h2>';
-    echo '<p style="float:left">Signed in as <strong>'.$snipi_username.'</strong>.</p>';
-?>
-<form name="oscimp_form" method="post"
-	action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>"
-	style="float: left; padding: 7px;"><input type="hidden"
-	name="snipi_hidden" value="R"> <input class="button button-highlighted"
-	type="submit" name="Submit"
-	value="<?php _e('Sign out', 'snipi_trdom' ) ?>" /></form>
-<?php
-    echo "<p style=\"clear:both\">You can either use the default WordPress Media Library (WordPress Mode), or for some extra power, download the NextGen Gallery plugin. As soon as its installed and activated, you can switch to NextGen Mode right here in the settings.</p>";
-	echo "<p>Remember, you'll need the Snipi Toolbar to drag and drop images and have them automagically appear in WordPress.</p>";
-	echo "<p>Enjoy.  And visit us at Snipi.com for all the other Snipi features.</p>";
-	echo '</div>';
-}
-
-/**
- * Print HTML code to switch mode in Snipi Plugin
- *
- */
-function wp_snipi_settings(){
-    global $snipi;
-    if (isset($_GET['mode'])&&strlen($_GET['mode'])){
+  if (isset($_GET['mode'])&&strlen($_GET['mode'])){
         //echo $snipi->options['mode'];
         switch($_GET['mode']){
             case 'ngg':
@@ -219,21 +191,32 @@ function wp_snipi_settings(){
                 break;
         }
     }
-echo '<p style="padding:10px">';
+    echo '<div style="padding:10px">';
+    echo '<h2>Snipi plugin is active in <strong>'.(($snipi->options['mode']=='wp')?'WordPress Mode':'NextGen Mode').'</strong>. ';
     switch($snipi->options['mode']){
         case 'ngg':
-            echo 'Snipi for WordPress is currently in NextGen mode<br/>';
             echo ' Switch to <a href="'.str_replace('%7E','~',$_SERVER['PHP_SELF']).'?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=wp'.'">WordPress Mode</a>';
             break;
         case 'wp':
-
         default:
-            echo 'Snipi for WordPress is currently in WordPress mode<br/>';
             if (class_exists('nggLoader')){
                 echo ' Switch to <a href="'.str_replace('%7E','~',$_SERVER['PHP_SELF']).'?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=ngg'.'">NextGen Mode</a>';
             }
             break;
     }
-    echo '</p>';
+   echo '</h2>';
+    echo '<p style="float:left">Signed in as <strong>'.$snipi_username.'</strong>.</p>';
+?>
+<form name="oscimp_form" method="post"
+	action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>"
+	style="float: left; padding: 7px;"><input type="hidden"
+	name="snipi_hidden" value="R"> <input class="button button-highlighted"
+	type="submit" name="Submit"
+	value="<?php _e('Sign out', 'snipi_trdom' ) ?>" /></form>
+<?php
+    echo "<p style=\"clear:both\">You can either use the default WordPress Media Library (WordPress Mode), or for some extra power, download the NextGen Gallery plugin. As soon as its installed and activated, you can switch to NextGen Mode right here in the settings.</p>";
+	echo "<p>Remember, you'll need the Snipi Toolbar to drag and drop images and have them automagically appear in WordPress.</p>";
+	echo "<p>Enjoy.  And visit us at Snipi.com for all the other Snipi features.</p>";
+	echo '</div>';
 }
 ?>
