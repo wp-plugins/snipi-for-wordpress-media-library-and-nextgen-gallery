@@ -3,7 +3,7 @@
  * This file contains functions that show content for 'Overview' page
  * @package wp_snipi
  * @author Denis Uraganov <snipi@uraganov.net>
- * @version 1.1.3
+ * @version 1.1.5
  * @since 1.0.0
  */
 
@@ -11,7 +11,8 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 
 
 add_meta_box('dashboard_right_now', __('Status', 'snipi'), 'wp_snipi_overview_right_now', 'snipi_overview', 'left', 'core');
-add_meta_box('dashboard_quick_press', __('Plugin mode', 'snipi'), 'wp_snipi_settings', 'snipi_overview', 'right', 'core');
+add_meta_box('dashboard_right_now', __('Test upload', 'snipi'), 'wp_snipi_overview_test_now', 'snipi_overview_test', 'left', 'core');
+//add_meta_box('dashboard_quick_press', __('Plugin mode', 'snipi'), 'wp_snipi_settings', 'snipi_overview', 'right', 'core');
 //add_meta_box('dashboard_primary', __('Latest News', 'snipi'), 'wp_snipi_overview_news', 'snipi_overview', 'left', 'core');
 
 /**
@@ -25,6 +26,7 @@ function wp_snipi_overview()  {
 <div id="post-body">
 <div id="post-body-content">
 <?php do_meta_boxes('snipi_overview', 'left', ''); ?>
+<?php do_meta_boxes('snipi_overview_test', 'left', ''); ?>
 </div>
 </div>
 </div>
@@ -33,7 +35,7 @@ function wp_snipi_overview()  {
 <?php
 }
 /**
- * Show a summary of the used images
+ * Show a snipi login form and switch mode links
  *
  * @return void
  */
@@ -63,6 +65,82 @@ function wp_snipi_overview_right_now ()
     }
 }
 
+
+function  wp_snipi_overview_test_now(){
+ $api = wp_snipi_get_api();
+    $url = wp_snipi_get_url();
+    $errors = array();
+    if (isset($_POST['snipi_hidden']) && $_POST['snipi_hidden'] == 'T') {
+    if (wp_snipi_test_upload($api,$url)) {
+            print_wp_snipi_test_success();
+        } else {
+            print_wp_snipi_test_failed();
+        }
+    } else {
+    	print_wp_snipi_test_form();
+    }
+}
+
+function print_wp_snipi_test_success(){
+	global $snipi
+	?>
+			<div class="wrap" style="padding: 10px">
+<h2>Test completed </h2>
+
+<p>
+The sample image below should appear in your <strong><?php echo (($snipi->options['mode']=='wp')?'WordPress Media Library':'NextGen Gallery')?></strong>.
+</p>
+<img src="http://s3.amazonaws.com/snipi/images/a/160.png" alt="sample image"/><br/>
+[SAMPLE IMAGE]
+<p>
+If the sample image does not appear, please contact us at support@snipi.com.
+</p>
+</div>
+
+<?php 
+}
+
+function print_wp_snipi_test_failed(){
+	?>
+	<div class="wrap" style="padding: 10px">
+<h2>Test completed </h2>
+
+<p>
+The sample image below should appear in your <strong><?php echo (($snipi->options['mode']=='wp')?'WordPress Media Library':'NextGen Gallery')?></strong>.
+</p>
+<img src="http://s3.amazonaws.com/snipi/images/a/160.png" alt="sample image"/><br/>
+[SAMPLE IMAGE]
+<p>
+If the sample image does not appear, please contact us at support@snipi.com.
+</p>
+</div>
+<?php 
+};
+            
+function print_wp_snipi_test_form(){
+	?>
+	<div class="wrap" style="padding: 10px">
+<h2>Test Snipi With Your WordPress Installation</h2>
+<p>The below feature is provided to you as a way to test whether Snipi is
+working properly with your WordPress configuration.</p>
+
+<p>Please click TEST below to send a sample image from the Snipi server
+to your WordPress Media Library.</p>
+    
+<form name="wp_snipi_test_form" method="post"
+	action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
+<input type="hidden" name="snipi_hidden" value="T"> 
+<p class="submit"><input type="submit" name="Submit"
+	value="<?php _e('Test', 'snipi' ) ?>" /></p>
+</form>
+</div>
+<?php 
+}
+
+
+function print_wp_snipi_test_result(){
+	
+}
 
 /**
  * Show the latest news
@@ -139,7 +217,7 @@ function print_user_login($errors=array(),$un=''){
 Wordpress Plugin, read the <a href="admin.php?page=snipi-about">About
 section</a> of the Snipi for Wordpress plugin</p>
 
-<p>Please enter your Snipi username and password. If you do not yet have
+<p>Please enter your <strong>Snipi username and password</strong>. If you do not yet have
 an account, <a href="http://www.snipi.com/registration" target="_blank">Sign
 Up here</a>.</p>
     <?php
@@ -152,7 +230,7 @@ Up here</a>.</p>
     <?php }?>
     <?php endif;?>
     
-<form name="oscimp_form" method="post"
+<form name="wp_snipi_login_form" method="post"
 	action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
 <p><?php _e("Snipi Username: " ); ?><input type="text" name="snipi_user"
 	value="<?php echo $un; ?>" size="20"></p>

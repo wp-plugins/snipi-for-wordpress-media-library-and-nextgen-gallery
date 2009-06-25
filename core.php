@@ -323,6 +323,38 @@ function wp_snipi_update_user($un,$pwd,$api,$url){
 }
 
 /**
+ * Sends request to Snipi.com in order to execute test upload
+ * @param $api
+ * @param $url
+ * @return boolean
+ */
+function wp_snipi_test_upload($api,$url){
+    // set URL and other appropriate options
+    $servis_url=SNIPI_AJAX_URL.'?service=testwpapi&url='.urlencode($url).'&api='.urlencode($api);
+    // create a new cURL resource
+    $ch=curl_init();
+    curl_setopt($ch,CURLOPT_URL,$servis_url);
+    curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,2);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    $buffer=curl_exec($ch);
+    // close cURL resource, and free up system resources
+    curl_close($ch);
+    if (!empty($buffer)){
+        if (function_exists('json_decode'))
+        	$obj=json_decode($buffer);
+        else{
+        	require_once (dirname(__FILE__).'/lib/json.php');
+        	$json = new Services_JSON();
+			$obj = $json->decode($buffer);
+        }
+        if ($obj->success=='true'){
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * Remove any reference to this plugin activation on Snipi.com
  *
  * @param string $api

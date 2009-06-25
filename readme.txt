@@ -4,7 +4,7 @@ Tags: photo, image, picture, pics, images, post, media library, wordpress, galle
 Donate link:
 Requires at least: 2.7
 Tested up to: 2.8
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -28,13 +28,14 @@ Important Links:
 
 RELEASE INFORMATION
 ---------------
-Snipi for Wordpress 1.1.4.
-Released on June 17, 2009.
+Snipi for Wordpress 1.1.5.
+Released on June 24, 2009.
 
-CHANGELOG: 1.1.4
+CHANGELOG: 1.1.5
 ----------------
-* Resolved issue with Overview page
-
+* Added feature to request test image upload from Snipi server to wordpress or to NextGen gallery in order to verify that plugin works with current wordpress configuration.  
+* Modified UI on "overview" page
+* Updated FAQ section
 
 FEATURES:
 
@@ -69,6 +70,11 @@ Make sure that the following constants set properly:
 
 == Frequently Asked Questions ==
 
+= What username and password I need to enter in the activation form on "overview" page? =
+In order to activate "Snipi for Wordpress and NextGen gallery" plugin you have to enter username and password created on Snipi.com.
+
+DO NOT ENTER your WordPress admin credential or FTP username and password
+
 = I have some issue with Snipi for WordPress Plugin. What should I do? =
 
 If you are having any problems with the Snipi for WordPress plugin, please do not hesitate to email our support team.
@@ -82,6 +88,11 @@ Therefore, we appreciate the effort you put forth to share any problem that you 
 <a href="http://www.youtube.com/watch?v=73iNmJ1k-2c" title="Wordpress Support Forum">Snipi For WordPress Video</a>
 
 == ChangeLog ==
+
+Release: 1.1.5:
+* Added feature to request test image upload from Snipi server to wordpress or to NextGen gallery in order to verify that plugin works with current wordpress configuration.  
+* Modified UI on "overview" page
+* Updated FAQ section
 
 Release: 1.1.4:
 * Resolved issue with Overview page
