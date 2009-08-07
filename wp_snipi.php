@@ -13,7 +13,6 @@ Author URI: http://snipi.com/tour/view/social/
  * @author Denis Uraganov <snipi@uraganov.net>
  * @version 1.2.0
  */
-/** do not show errors and warnings */
 error_reporting(E_ERROR | E_PARSE);
 /** load Snipi core classes and functions*/
 require_once 'core.php';
