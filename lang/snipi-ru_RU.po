@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Snipi for Wordpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-06 18:04-0500\n"
+"POT-Creation-Date: 2009-08-07 12:18-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Denis Uraganov <snipi@uraganov.net>\n"
 "Language-Team: Snipi <info@snipi.com>\n"
@@ -29,7 +29,7 @@ msgstr "У вас нет прямого доступа к этой страни�
 
 #: ../admin/about.php:24
 msgid "About"
-msgstr ""
+msgstr "О Snipi"
 
 #: ../admin/about.php:25
 msgid ""
@@ -233,7 +233,7 @@ msgstr "Переключиться в <a href=\"%s?page=snipi-for-wordpress-medi
 
 #: ../admin/overview.php:199
 msgid "Signed in as"
-msgstr ""
+msgstr "Вошел как"
 
 #: ../admin/overview.php:203
 msgid "Sign out"
