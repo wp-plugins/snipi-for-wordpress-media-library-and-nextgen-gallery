@@ -235,19 +235,13 @@ $snipi_username = '';
  */
 function wp_snipi_get_api ()
 {
-	global $wpdb, $snipi;
+	global $snipi;
 	if (! empty($snipi->options['api'])) {
 		return $snipi->options['api'];
 	}
-	;
-	$current_user = wp_get_current_user();
-	$user_id = $current_user->ID;
-	$user_pwd = $current_user->user_pass;
-	$user_login = $current_user->user_login;
 	$url = wp_snipi_get_url();
-	$sql = "SELECT MD5(CONCAT('$user_id','_','$user_login','_','$user_pwd','_" . str_replace("'", '', AUTH_KEY) . $url . "')) as api";
-	$result = $wpdb->get_results($sql);
-	$snipi_options['api'] = $result[0]->api;
+    $salt = substr(md5(uniqid(rand(), true)), 0, 9);
+	$snipi_options['api'] = $salt . sha1($salt . $url.AUTH_KEY);
 	update_option('snipi_options', $snipi_options);
 	return $snipi_options['api'];
 }
