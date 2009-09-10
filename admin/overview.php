@@ -196,7 +196,9 @@ function print_user_info ()
 			break;
 	}
 	echo '</h2>';
-	echo '<p style="float:left">'._e('Signed in as', 'snipi').' <strong>' . $snipi_username . '</strong>.</p>';
+	echo '<p style="float:left">';
+	echo _e('Signed in as', 'snipi').' <strong>' . $snipi_username . '</strong>';
+	echo '</p>';
 	?>
 	<form name="oscimp_form" method="post"	action="<?php echo str_replace('%7E', '~', $_SERVER['REQUEST_URI']);?>" style="float: left; padding: 7px;">
 		<input type="hidden" name="snipi_hidden" value="R"/>
