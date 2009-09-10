@@ -40,6 +40,12 @@ msgid ""
 "\t\t\t\t\t<p>Watch the tutorial videos at http://www.snipiblog.com/tutorial-videos/</p>\n"
 "\t\t\t\t\t"
 msgstr ""
+"\n"
+"\t\t\t\t\t<p>Использую Snipi Toolbar, вы можете перетащить фото или картинки отовсюду в Интернете и они автоматически появяться в вашей медиа библиотеке WordPress или галереи NextGen.</p><p>Вы можете установить Snipi Toolbar, посетив www.snipi.com.</p><p> Snipi Toolbar - это дополнение к Firefox 3 (или выше), которое позволяет вам буквально перетащить продукт, фото, YouTube или Vimeo видео с любого ресурса в сети. Текущая версия плагина Snipi for WordPress дает возможность иметь в медиа библиотеке WordPress или галереи NextGen картинку, которую вы перетащили в  Snipi Toolbar.  В течении нескольких секунд, после того как вы добавите картинку в Snipi Toolbar, картинка автоматически появиться в WordPress, готовая для размещиния в ваших статьях.</p>\n"
+"\t\t\t\t\t<p>Плагин Snipi for WordPress имеет два режима: режим WordPress и режим NGG.  Если у вас установлена галерея NextGen, вы можете выбрать режим NGG, тогда все картинки будут отправлены в галерею NextGen вместо медиа библиотеки WordPress.</p>\n"
+"\t\t\t\t\t<p>Все, что вы перетащите в Snipi Toolbar, будет всегда доступно для вас на Snipi.com. Вы можете отправить ваши фото, видео или продукты на Facebook и налету добавить комментарии о них на Twitter. Данная информация также доступна на вашем iPhone с установленным приложением Snipi.</p>\n"
+"\t\t\t\t\t<p>Смотрите обучающее видео на http://www.snipiblog.com/tutorial-videos/</p>\n"
+"\t\t\t\t\t"
 
 #: ../admin/about.php:31
 msgid ""
@@ -166,7 +172,7 @@ msgstr ""
 
 #: ../admin/overview.php:118
 msgid "Test Snipi With Your WordPress Installation"
-msgstr ""
+msgstr "Проверить работоспособность Snipi с установленной версией WordPress"
 
 #: ../admin/overview.php:119
 msgid "The below feature is provided to you as a way to test whether Snipi is working properly with your WordPress configuration."
@@ -186,7 +192,7 @@ msgstr "Активировать Плагин"
 
 #: ../admin/overview.php:139
 msgid "For more information on how to use the toolbar with Snipi for Wordpress Plugin, read the <a href=\"admin.php?page=snipi-about\">About section</a> of the Snipi for Wordpress plugin"
-msgstr ""
+msgstr "Для получения более подробной информации об использовании Snipi Toolbar с плагином Snipi for Wordpress читайте секцию <a href=\"admin.php?page=snipi-about\">О Snipi</a> "
 
 #: ../admin/overview.php:140
 msgid "Please enter your <strong>Snipi username and password</strong>. If you do not yet have an account, <a href=\"http://www.snipi.com/registration\" target=\"_blank\">Sign Up here</a>."
