@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Snipi for Wordpress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-07 12:11-0500\n"
+"POT-Creation-Date: 2009-08-07 12:18-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Denis Uraganov <snipi@uraganov.net>\n"
 "Language-Team: Snipi <info@snipi.com>\n"
@@ -19,17 +19,17 @@ msgstr ""
 
 #: ../core.php:113
 msgid "Sorry, Snipi works only with a Memory Limit of 16 MB higher"
-msgstr ""
+msgstr "Извините, Snipi работает только с "
 
 #: ../admin/about.php:10
 #: ../admin/install.php:9
 #: ../admin/overview.php:10
 msgid "You are not allowed to call this page directly."
-msgstr ""
+msgstr "У вас нет прямого доступа к этой странице."
 
 #: ../admin/about.php:24
 msgid "About"
-msgstr ""
+msgstr "О Snipi"
 
 #: ../admin/about.php:25
 msgid ""
@@ -40,6 +40,12 @@ msgid ""
 "\t\t\t\t\t<p>Watch the tutorial videos at http://www.snipiblog.com/tutorial-videos/</p>\n"
 "\t\t\t\t\t"
 msgstr ""
+"\n"
+"\t\t\t\t\t<p>Использую Snipi Toolbar, вы можете перетащить фото или картинки отовсюду в Интернете и они автоматически появяться в вашей медиа библиотеке WordPress или галереи NextGen.</p><p>Вы можете установить Snipi Toolbar, посетив www.snipi.com.</p><p> Snipi Toolbar - это дополнение к Firefox 3 (или выше), которое позволяет вам буквально перетащить продукт, фото, YouTube или Vimeo видео с любого ресурса в сети. Текущая версия плагина Snipi for WordPress дает возможность иметь в медиа библиотеке WordPress или галереи NextGen картинку, которую вы перетащили в  Snipi Toolbar.  В течении нескольких секунд, после того как вы добавите картинку в Snipi Toolbar, картинка автоматически появиться в WordPress, готовая для размещиния в ваших статьях.</p>\n"
+"\t\t\t\t\t<p>Плагин Snipi for WordPress имеет два режима: режим WordPress и режим NGG.  Если у вас установлена галерея NextGen, вы можете выбрать режим NGG, тогда все картинки будут отправлены в галерею NextGen вместо медиа библиотеки WordPress.</p>\n"
+"\t\t\t\t\t<p>Все, что вы перетащите в Snipi Toolbar, будет всегда доступно для вас на Snipi.com. Вы можете отправить ваши фото, видео или продукты на Facebook и налету добавить комментарии о них на Twitter. Данная информация также доступна на вашем iPhone с установленным приложением Snipi.</p>\n"
+"\t\t\t\t\t<p>Смотрите обучающее видео на http://www.snipiblog.com/tutorial-videos/</p>\n"
+"\t\t\t\t\t"
 
 #: ../admin/about.php:31
 msgid ""
@@ -57,7 +63,7 @@ msgstr ""
 
 #: ../admin/about.php:43
 msgid "Installation"
-msgstr ""
+msgstr "Установка"
 
 #: ../admin/about.php:44
 msgid ""
@@ -75,7 +81,7 @@ msgstr ""
 
 #: ../admin/about.php:56
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Часто Задаваемые Вопросы"
 
 #: ../admin/about.php:57
 msgid ""
@@ -96,15 +102,15 @@ msgstr ""
 
 #: ../admin/admin.php:31
 msgid "Snipi"
-msgstr ""
+msgstr "Snipi"
 
 #: ../admin/admin.php:32
 msgid "Overview"
-msgstr ""
+msgstr "Обзор"
 
 #: ../admin/admin.php:33
 msgid "About Snipi"
-msgstr ""
+msgstr "О Snipi"
 
 #: ../admin/install.php:30
 msgid "Sorry, Snipi works only with a role called administrator"
@@ -112,7 +118,7 @@ msgstr ""
 
 #: ../admin/overview.php:12
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 #: ../admin/overview.php:13
 msgid "Test upload"
@@ -120,23 +126,23 @@ msgstr ""
 
 #: ../admin/overview.php:22
 msgid "Snipi for Wordpress Plugin Overview"
-msgstr ""
+msgstr "Обзор плагина Snipi for Wordpress"
 
 #: ../admin/overview.php:91
 msgid "Test successfully completed"
-msgstr ""
+msgstr "Тест успешно завершен"
 
 #: ../admin/overview.php:92
 msgid "The sample image below should appear in your"
-msgstr ""
+msgstr "Картинка с низу должна появиться в вашей"
 
 #: ../admin/overview.php:93
 msgid "WordPress Media Library"
-msgstr ""
+msgstr "WordPress Media Библиотеки"
 
 #: ../admin/overview.php:93
 msgid "NextGen Gallery"
-msgstr ""
+msgstr "NextGen Галереи"
 
 #: ../admin/overview.php:95
 #: ../admin/overview.php:96
@@ -146,19 +152,19 @@ msgstr ""
 #: ../admin/overview.php:97
 #: ../admin/overview.php:109
 msgid "If the sample image does not appear, please contact us at support@snipi.com."
-msgstr ""
+msgstr "Если картинка не появилась, пожалуйста, обратитесь в службу поддержки support@snipi.com."
 
 #: ../admin/overview.php:105
 msgid "Test wasn't successfully completed"
-msgstr ""
+msgstr "Тест не завершен успешно"
 
 #: ../admin/overview.php:106
 msgid "Please check the most common resons below:"
-msgstr ""
+msgstr "Пожалуйста, проверьте наиболее распространенные причины снизу:"
 
 #: ../admin/overview.php:107
 msgid "Your site does not have public access."
-msgstr ""
+msgstr "Ваш сайт не имеет публичного доступа."
 
 #: ../admin/overview.php:108
 msgid "In order to use file upload the chmod of wp-content folder must be set to 777. If you have not changed permissions in order to write in <tt>wp-content</tt> folder, <b>you will not be able to use Snipi for Wordpress Plugin</b>. If you do not know how to change this value, please read <a href=\"http://codex.wordpress.org/Changing_File_Permissions\" title=\"Changing File Permissions\">Changing File Permissions</a>.  Remember to reset the folder permissions after the <b>uploads</b> directory has been created inside wp-content."
@@ -166,7 +172,7 @@ msgstr ""
 
 #: ../admin/overview.php:118
 msgid "Test Snipi With Your WordPress Installation"
-msgstr ""
+msgstr "Проверить работоспособность Snipi с установленной версией WordPress"
 
 #: ../admin/overview.php:119
 msgid "The below feature is provided to you as a way to test whether Snipi is working properly with your WordPress configuration."
@@ -178,66 +184,66 @@ msgstr ""
 
 #: ../admin/overview.php:123
 msgid "Test"
-msgstr ""
+msgstr "Проверить"
 
 #: ../admin/overview.php:138
 msgid "Activate plugin"
-msgstr ""
+msgstr "Активировать Плагин"
 
 #: ../admin/overview.php:139
 msgid "For more information on how to use the toolbar with Snipi for Wordpress Plugin, read the <a href=\"admin.php?page=snipi-about\">About section</a> of the Snipi for Wordpress plugin"
-msgstr ""
+msgstr "Для получения более подробной информации об использовании Snipi Toolbar с плагином Snipi for Wordpress читайте секцию <a href=\"admin.php?page=snipi-about\">О Snipi</a> "
 
 #: ../admin/overview.php:140
 msgid "Please enter your <strong>Snipi username and password</strong>. If you do not yet have an account, <a href=\"http://www.snipi.com/registration\" target=\"_blank\">Sign Up here</a>."
-msgstr ""
+msgstr "Пожалуйста, введите <strong>Имя пользователя и Пароль пользователя зарегистрированного на Snipi.com</strong>. Если у вас еще нет учетной записи, <a href=\"http://www.snipi.com/registration\" target=\"_blank\">зарегистрируйтесь</a>."
 
 #: ../admin/overview.php:144
 msgid "ERROR"
-msgstr ""
+msgstr "ОШИБКА"
 
 #: ../admin/overview.php:149
 msgid "Snipi Username"
-msgstr ""
+msgstr "Имя пользователя Snipi"
 
 #: ../admin/overview.php:150
 msgid "Snipi Password"
-msgstr ""
+msgstr "Пароль"
 
 #: ../admin/overview.php:152
 msgid "Lost your password?"
-msgstr ""
+msgstr "Забыли пароль?"
 
 #: ../admin/overview.php:154
 msgid "Sign in"
-msgstr ""
+msgstr "Войти"
 
 #: ../admin/overview.php:175
 msgid "Please, Install NextGen"
-msgstr ""
+msgstr "Пожалуйста, установите NextGen"
 
 #: ../admin/overview.php:186
 #, php-format
 msgid "Snipi plugin is active in <strong>%s Mode.</strong>"
-msgstr ""
+msgstr "Snipi плагин активирован в <strong>режиме %s.</strong>"
 
 #: ../admin/overview.php:189
 #, php-format
 msgid "Switch to <a href=\"%s?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=wp\">WordPress Mode</a>"
-msgstr ""
+msgstr "Переключиться в <a href=\"%s?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=wp\">режим WordPress</a>"
 
 #: ../admin/overview.php:194
 #, php-format
 msgid "Switch to <a href=\"%s?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=ngg\">NextGen Mode</a>"
-msgstr ""
+msgstr "Переключиться в <a href=\"%s?page=snipi-for-wordpress-media-library-and-nextgen-gallery&mode=ngg\">режим NextGen</a>"
 
 #: ../admin/overview.php:199
 msgid "Signed in as"
-msgstr ""
+msgstr "Вошел как"
 
 #: ../admin/overview.php:203
 msgid "Sign out"
-msgstr ""
+msgstr "Выйти"
 
 #: ../admin/overview.php:206
 msgid ""
@@ -250,4 +256,27 @@ msgstr ""
 #, php-format
 msgid "Unable to write to directory %s. Is this directory writable by the server?"
 msgstr ""
+
+#~ msgid "About Snipi Text"
+#~ msgstr ""
+#~ "<p>Using the Snipi Toolbar, you can drag and drop images from anywhere on "
+#~ "the Internet and have them appear automatically in your WordPress Media "
+#~ "Library or NextGen Gallery.</p><p>You can get the Snipi Toolbar at www."
+#~ "snipi.com.</p><p>The Snipi Toolbar is a Firefox 3 (or higher) add-on that "
+#~ "allows you to literally drag and drop products, photos and YouTube and "
+#~ "Vimeo videos from anywhere on the web.  The current version of the Snipi "
+#~ "WordPress Plugin gives you the option of having an entire list of images "
+#~ "or a single image at a time sent to WordPress' Media Library or NextGen "
+#~ "Gallery.  Within seconds after dragging an image into the Snipi Toolbar, "
+#~ "the image will automatically appear in WordPress, ready for you to use in "
+#~ "your posts.</p><p>The Snipi WordPress Plugin has two modes, WordPress "
+#~ "mode or NGG mode.  If you are an NextGen Gallery user, you can choose NGG "
+#~ "mode to have images sent to NextGen Gallery rather than the WordPress "
+#~ "Media Libary.</p><p>The Snipi Toolbar also allows you to drag and drop "
+#~ "products, photos and YouTube and Vimeo videos from anywhere on the web. "
+#~ "These items are always available with you in the Snipi Toolbar, are saved "
+#~ "on Snipi.com, can be sent to Facebook or WordPress, can be sent to "
+#~ "Twitter (Tweeted) on the fly, and are available on your iPhone using the "
+#~ "Snipi app.</p><p>Watch the tutorial videos at http://www.snipiblog.com/"
+#~ "tutorial-videos/</p>"
 

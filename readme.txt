@@ -4,7 +4,7 @@ Tags: photo, image, picture, pics, images, post, media library, wordpress, galle
 Donate link:
 Requires at least: 2.7
 Tested up to: 2.8
-Stable tag: 1.1.5
+Stable tag: 1.2.1
 
 Drag and drop images into the Snipi Toolbar and they automatically appear in your WordPress Media Library or NextGen Gallery.
 
@@ -28,14 +28,15 @@ Important Links:
 
 RELEASE INFORMATION
 ---------------
-Snipi for Wordpress 1.1.5.
-Released on June 24, 2009.
+Snipi for Wordpress 1.2.1.
+Released on September 10, 2009.
 
-CHANGELOG: 1.1.5
+CHANGELOG: 1.2.1
 ----------------
-* Added feature to request test image upload from Snipi server to wordpress or to NextGen gallery in order to verify that plugin works with current wordpress configuration.  
-* Modified UI on "overview" page
-* Updated FAQ section
+* Fixed bug: Image that has title or description containing special characters cannot be sent to NextGen Gallery properly
+* Minor changes in user interface
+* Updated language files
+
 
 FEATURES:
 
@@ -59,15 +60,6 @@ Steps:
 1. Drag and image from anywhere on the Internet into the toolbar.  Click save in the Toolbar.
 1. Voila!  In about 60 seconds, that image will appear in either the WordPress Media Library or the NextGen Gallery (depending on which mode you choose/prefer).
 
-== Features Configuration ==
-Modify configuration variables in  /wp_snipi/core.php
-
-Make sure that the following constants set properly:
-
-`SNIPI_AJAX_URL` - Url that checks snipi user profile (For example, http://www.snipi.com/wordpress/api/)
-`SNIPI_ALLOWED_IMAGE_EXT` - Allowed Image extentions. Use pipe  as separator (For example, jpeg|jpg|gif|png);
-`SNIPI_GALLERY_TITLE` - Title of the gallery where plugin put images from Snipi (for NextGen Gallery mode only)
-
 == Frequently Asked Questions ==
 
 = What username and password I need to enter in the activation form on "overview" page? =
@@ -89,8 +81,19 @@ Therefore, we appreciate the effort you put forth to share any problem that you 
 
 == ChangeLog ==
 
+Release: 1.2.0:
+* Fixed bug: Image that has title or description containing special characters cannot be sent to NextGen Gallery properly
+* Minor changes in user interface
+* Updated language files
+
+Release: 1.2.0:
+* Major improvements in core functionality
+* More stable and more secure
+* Automatically inserts title and description defined on Snipi.com in Wordpress Mode
+* Automatically inserts title, description and tags defined on Snipi.com in NGG Mode
+
 Release: 1.1.5:
-* Added feature to request test image upload from Snipi server to wordpress or to NextGen gallery in order to verify that plugin works with current wordpress configuration.  
+* Added feature to request test image upload from Snipi server to wordpress or to NextGen gallery in order to verify that plugin works with current wordpress configuration.
 * Modified UI on "overview" page
 * Updated FAQ section
 
@@ -98,7 +101,7 @@ Release: 1.1.4:
 * Resolved issue with Overview page
 
 Release: 1.1.3:
-* Compatibility 2.8 
+* Compatibility 2.8
 
 Release: 1.1.2:
 * Fixed minor bugs
@@ -106,7 +109,6 @@ Release: 1.1.2:
 Release: 1.1.1:
 * Resolved issue with PHP Allow URL fopen
 * Improved security
-
 
 Release: 1.1.0:
 * Support PHP 4
