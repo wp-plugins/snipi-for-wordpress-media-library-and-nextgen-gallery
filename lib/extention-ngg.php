@@ -35,12 +35,12 @@ if ($data['api'] != $wp_snipi_options['api']) {
 	$json['errors'][] = 'Error, API is not valid: ' . $data['api'] . ' !=' . $wp_snipi_options['api'];
 }
 if (strlen($data['title'])) {
-	$post_data['post_title'] = $data['title'];
-	$post_data['post_excerpt'] = $data['title'];
+	$post_data['post_title'] = addslashes($data['title']);
+	$post_data['post_excerpt'] = addslashes($data['title']);
 }
 $post_data['tags'] = $data['tags'];
 if (strlen($data['description'])) {
-	$post_data['post_content'] = $data['description'];
+	$post_data['post_content'] = addslashes($data['description']);
 }
 if (! function_exists('get_currentuserinfo')) {
 	function get_currentuserinfo ()
